@@ -7,17 +7,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <ListView
+        android:id="@+id/list_movies"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/list_movies"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </ScrollView>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
