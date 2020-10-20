@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         listMovies = (ListView) findViewById(R.id.list_movies);
 
-        ArrayList<String> movieTitle = new ArrayList<String>();
+        final ArrayList<String> movieTitle = new ArrayList<String>();
 
         // Instanciar requestQueue
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
                         // Adicionar título ao array de strings
 
-                       //etMovieList(title);
+                       getMovieList(title, movieTitle);
                     }
 
                 } catch (JSONException e) {
@@ -86,15 +86,14 @@ public class MainActivity extends AppCompatActivity {
 
         requestQueue.add(stringRequest);
 
-        final ArrayList<String> movies = new ArrayList<>();
-
-        for (int i = 0; i < movieTitle.size(); i++) {
-            movies.add(movieTitle.get(i));
-        }
-
         Log.d("=======movieTitle", ""+movieTitle);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, movies);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, movieTitle);
         listMovies.setAdapter(arrayAdapter);
+    }
+
+    public ArrayList<String> getMovieList(String title, ArrayList<String> movieTitle) {
+        movieTitle.add(title);
+        return movieTitle;
     }
 }
