@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">Movie</string>
+    <string name="app_name">Movies</string>
     <string name="title_list">Filmes</string>
     <string name="movie_title_list">Titulo</string>
     <string name="movie_details">Detalhes</string>
+    <string name="popularity">Popularity</string>
+    <string name="back_list">Voltar</string>
+    <string name="generos">Gêneros: </string>
+    <string name="view_details">Clique para mais detalhes</string>
+    <string name="movie_icon">Icone Filme</string>
 </resources>

@@ -13,13 +13,27 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:textColor="@color/textColor"
         android:layout_margin="10dp"
         android:textSize="25sp"
+        android:fontFamily="sans-serif" />
+
+    <TextView
+        android:id="@+id/info_list"
+        android:text="@string/view_details"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/textColor"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
         android:fontFamily="sans-serif" />
 
     <ListView
         android:id="@+id/list_movies"
         android:orientation="vertical"
+        android:divider="@null"
+        android:dividerHeight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
