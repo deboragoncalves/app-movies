@@ -2,8 +2,11 @@ package com.navita.movie;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,11 +21,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     ListView listMovies;
+    private ArrayList<String> movieTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +36,24 @@ public class MainActivity extends AppCompatActivity {
 
         listMovies = (ListView) findViewById(R.id.list_movies);
 
-        final ArrayList<String> movieTitle = new ArrayList<String>();
+        movieTitle = new ArrayList<>();
 
+        getRequest(movieTitle);
+
+        listMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view,
+                                    int position, long id) {
+
+                Intent intent = new Intent(MainActivity.this, DetailsMovieActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    private void getRequest(ArrayList<String> movieList) {
         // Instanciar requestQueue
 
         final RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -64,11 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
                         String title = dataMovie.getString("title");
 
-                        Log.d("=======titulo", title);
-
                         // Adicionar título ao array de strings
 
-                       getMovieList(title, movieTitle);
+                        getMovieList(title, movieTitle);
                     }
 
                 } catch (JSONException e) {
@@ -78,22 +97,18 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("error", ""+error);
+                error.printStackTrace();
             }
         });
 
         // Adicionar request ao requestQueue
 
         requestQueue.add(stringRequest);
-
-        Log.d("=======movieTitle", ""+movieTitle);
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, movieTitle);
-        listMovies.setAdapter(arrayAdapter);
     }
 
-    public ArrayList<String> getMovieList(String title, ArrayList<String> movieTitle) {
+    private void getMovieList(String title, ArrayList<String> movieTitle) {
         movieTitle.add(title);
-        return movieTitle;
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, movieTitle);
+        listMovies.setAdapter(arrayAdapter);
     }
 }
