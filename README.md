@@ -1,3 +1,3 @@
 # test-navita
 
-## In development. Test for Dev Mobile Jr. in Navita.
+## Test for Dev Mobile Jr. in Navita.
