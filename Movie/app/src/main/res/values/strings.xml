@@ -11,4 +11,7 @@
     <string name="button_login">Entrar</string>
     <string name="password">Senha</string>
     <string name="input_login">Login</string>
+    <string name="alert_password">A senha deve ter, no mínimo, 6 dígitos</string>
+    <string name="alert_username">O usuário deve estar em formato de email.</string>
+    <string name="alert_login">Preencha o login corretamente.</string>
 </resources>
