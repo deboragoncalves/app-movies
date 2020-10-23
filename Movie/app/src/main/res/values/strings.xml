@@ -13,5 +13,6 @@
     <string name="input_login">Login</string>
     <string name="alert_password">A senha deve ter, no mínimo, 6 dígitos</string>
     <string name="alert_username">O usuário deve estar em formato de email.</string>
-    <string name="alert_login">Preencha o login corretamente.</string>
+    <string name="list_movies">Lista de Filmes</string>
+    <string name="logout">Sair</string>
 </resources>

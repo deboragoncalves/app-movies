@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_activity);
 
-        // Handler para começar a Splash e terminar depois de um certo tempo, chamando a activity da intent
+        // Handler para começar a Splash e terminar depois de um certo tempo, chamando a activity
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -38,9 +38,9 @@ public class SplashActivity extends AppCompatActivity {
                     intent = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
-                    
+
                 }
             }
-        }, 4000);
+        }, 3000);
     }
 }

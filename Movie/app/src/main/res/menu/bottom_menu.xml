@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_list"
+        android:enabled="true"
+        android:icon="@drawable/list_movie"
+        android:title="@string/list_movies"/>
+
+    <item
+        android:id="@+id/page_login"
+        android:enabled="true"
+        android:icon="@drawable/logout"
+        android:title="@string/logout" />
+</menu>
