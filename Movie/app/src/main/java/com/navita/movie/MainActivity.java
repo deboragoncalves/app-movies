@@ -1,10 +1,14 @@
 package com.navita.movie;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listMovies = (ListView) findViewById(R.id.list_movies);
+        BottomNavigationView bottomMenu = (BottomNavigationView) findViewById(R.id.menu);
 
         movieTitle = new ArrayList<>();
 
@@ -48,6 +54,31 @@ public class MainActivity extends AppCompatActivity {
                 requestMovieId(position);
             }
         });
+
+        bottomMenu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                if (item.getItemId() == R.id.page_login) {
+
+                    // Limpar shared preferences
+
+                    SharedPreferences sharedPreferences = MainActivity.this.getSharedPreferences("data_login", Context.MODE_PRIVATE);
+                    sharedPreferences.edit().clear().apply();
+
+                    if (sharedPreferences.getAll().isEmpty()) {
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+
+
 
     }
 
