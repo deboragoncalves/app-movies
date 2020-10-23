@@ -8,4 +8,7 @@
     <string name="generos">Gêneros: </string>
     <string name="view_details">Clique para mais detalhes</string>
     <string name="movie_icon">Icone Filme</string>
+    <string name="button_login">Entrar</string>
+    <string name="password">Senha</string>
+    <string name="input_login">Login</string>
 </resources>

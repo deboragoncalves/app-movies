@@ -16,12 +16,22 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="buttonBack">
-        <item name="android:padding">5dp</item>
+    <style name="button">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="inputLogin">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:width">200dp</item>
+        <item name="android:height">200dp</item>
+        <item name="android:layout_margin">70dp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColorHint">#4B000000</item>
     </style>
 
 </resources>

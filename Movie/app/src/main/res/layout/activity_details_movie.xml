@@ -38,6 +38,6 @@
         android:id="@+id/button_back_list"
         android:text="@string/back_list"
         android:background="@color/backgroundColor"
-        style="@style/buttonBack" />
+        style="@style/button" />
 
 </LinearLayout>
