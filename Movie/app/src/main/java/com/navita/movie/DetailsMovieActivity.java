@@ -28,7 +28,6 @@ public class DetailsMovieActivity extends AppCompatActivity {
     private TextView movieTitle;
     private TextView moviePopularity;
     private TextView movieGenre;
-    private Button buttonBackList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public class DetailsMovieActivity extends AppCompatActivity {
         movieTitle = (TextView) findViewById(R.id.title_movie);
         moviePopularity = (TextView) findViewById(R.id.popularity_movie);
         movieGenre = (TextView) findViewById(R.id.genres_movie);
-        buttonBackList = (Button) findViewById(R.id.button_back_list);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -46,13 +44,6 @@ public class DetailsMovieActivity extends AppCompatActivity {
         assert bundle != null;
         int movieId = bundle.getInt("id");
         requestDetailsMovie(movieId);
-
-        buttonBackList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
     }
 
     private void requestDetailsMovie(int movieId) {
