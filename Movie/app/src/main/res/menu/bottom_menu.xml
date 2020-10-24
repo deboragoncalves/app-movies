@@ -3,12 +3,12 @@
     <item
         android:id="@+id/page_list"
         android:enabled="true"
-        android:icon="@drawable/list_movie"
+        android:icon="@drawable/icon_movie_list"
         android:title="@string/list_movies"/>
 
     <item
         android:id="@+id/page_login"
         android:enabled="true"
-        android:icon="@drawable/logout"
+        android:icon="@drawable/icon_logout"
         android:title="@string/logout" />
 </menu>
