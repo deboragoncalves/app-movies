@@ -16,4 +16,4 @@
 
 ##### cd Movie
 
-#### Open the project in your IDE, running the project in some emulator or in your smartphone.
+#### 2.1 Open the project in your IDE, running the project in some emulator or in your smartphone.
