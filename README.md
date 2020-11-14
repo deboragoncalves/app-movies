@@ -1,4 +1,4 @@
-# Test Navita
+# App Movies
 
 ## It's was a test for Dev Mobile Jr. in Navita. The main goal was to consume an API about movies (The Movie Database), showing a list of movies and the details about each one. The project was done in Java, and I also used the lib Material Design to do the menu. The IDE used in project was Android Studio.
 
